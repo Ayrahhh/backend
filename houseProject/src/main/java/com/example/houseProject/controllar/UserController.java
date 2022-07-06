@@ -21,20 +21,24 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-@PostMapping("post")
-    public  void add(@RequestBody User user){
+    @PostMapping("post")
+    public void add(@RequestBody User user) {
         userService.add(user);
     }
 
-@GetMapping("get")
-    public List<User>getAll(){
+    @GetMapping("get")
+    public List<User> getAll() {
         return userService.getList();
     }
 
- 
     @GetMapping("/{id}")
-    public User findUseById(@PathVariable(value = "id")long id){
+    public User findUseById(@PathVariable(value = "id") long id) {
         return null;
 
+    }
+//
+    @GetMapping("login/email/{email}/pass/{pass}")
+    public User login(@PathVariable("email") String email,@PathVariable("pass") String pass){
+        return userService.login(email, pass);
     }
 }

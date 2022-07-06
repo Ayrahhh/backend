@@ -34,5 +34,9 @@ public class CustomerController {
         return customerService.getList();
     }
 
+    @GetMapping("email/{email}")
+    public Customer getByEmail(@PathVariable("email") String email){
+        return customerService.getByEmail(email);
+    }
     
 }

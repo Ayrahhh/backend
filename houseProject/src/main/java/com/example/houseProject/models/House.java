@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -24,6 +25,10 @@ private long house_id;
 private String house_owner;
 private String location;
 private int house_no;
+//for the first time deta intered inakuwa false,than inakuwa true
+private boolean rented;
+private double price_per_month;
+@Lob
 private String image;
 private String category;
 @OneToMany

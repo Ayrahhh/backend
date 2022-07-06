@@ -1,5 +1,6 @@
 package com.example.houseProject.models;
 
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -10,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
-
 @Data
 @Entity
 public class Customer {
@@ -20,9 +20,10 @@ public class Customer {
     private String firstname;
     private String lastname;
     private String address;
-    private int phoneNo;
+    private int    phoneNo;
     private String email;
     private String country;
+    private String password;
     @OneToMany
     @JoinColumn(name = "customer_id")
     private List<Rent> rent;
